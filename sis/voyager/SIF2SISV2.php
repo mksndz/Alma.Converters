@@ -370,11 +370,11 @@ function buildUserAddresses(SimpleXMLElement $contactInfo,$patronRec) {
                 $preferredSet = true;
             }
 
-            $address->addChild('line1',$patronAddress['address_line_1']);
-            $address->addChild('line2',$patronAddress['address_line_2']);
-            $address->addChild('line3',$patronAddress['address_line_3']);
-            $address->addChild('line4',$patronAddress['address_line_4']);
-            $address->addChild('line5',$patronAddress['address_line_5']);
+            $address->addChild('line1',str_replace($patronAddress['address_line_1'],'&','&amp;'));
+            $address->addChild('line2',str_replace($patronAddress['address_line_2'],'&','&amp;'));
+            $address->addChild('line3',str_replace($patronAddress['address_line_3'],'&','&amp;'));
+            $address->addChild('line4',str_replace($patronAddress['address_line_4'],'&','&amp;'));
+            $address->addChild('line5',str_replace($patronAddress['address_line_5'],'&','&amp;'));
 
             $address->addChild('city',$patronAddress['city']);
             $address->addChild('state_province',$patronAddress['state_code']);
